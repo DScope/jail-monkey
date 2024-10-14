@@ -75,7 +75,7 @@ RCT_EXPORT_MODULE();
             @"/private/var/mobile/Library/SBSettings/Themes",
             @"/private/var/stash",
             @"/private/var/tmp/cydia.log",
-	    @"/var/tmp/cydia.log",
+	          @"/var/tmp/cydia.log",
             @"/usr/bin/cycript",
             @"/usr/bin/sshd",
             @"/usr/lib/libcycript.dylib",
@@ -98,7 +98,8 @@ RCT_EXPORT_MODULE();
             @"/var/lib/apt",
             @"/var/lib/cydia",
             @"/var/lib/dpkg/info/mobilesubstrate.md5sums",
-            @"/var/log/apt"
+            @"/var/log/apt",
+            @"/var/mobile/Library/Preferences/me.jjolano.shadow.plist"
             ];
 }
 
