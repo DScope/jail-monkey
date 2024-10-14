@@ -103,7 +103,6 @@ public class HookDetectionCheck {
               }
           }
       }
-  
       return false; // No Frida detected
   }
   
