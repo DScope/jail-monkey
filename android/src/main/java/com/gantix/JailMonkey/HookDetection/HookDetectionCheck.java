@@ -92,17 +92,19 @@ public class HookDetectionCheck {
     }
 
     private static boolean checkFrida(Context context) {
-        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        List<ActivityManager.RunningServiceInfo> runningServices = activityManager.getRunningServices(300);
-
-        if (runningServices != null) {
-            for (int i = 0; i < runningServices.size(); ++i) {
-                if (runningServices.get(i).process.contains("fridaserver")) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
+      // Check running services
+      ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+      List<ActivityManager.RunningServiceInfo> runningServices = activityManager.getRunningServices(Integer.MAX_VALUE);
+  
+      if (runningServices != null) {
+          for (ActivityManager.RunningServiceInfo serviceInfo : runningServices) {
+              if (serviceInfo.process.contains("fridaserver") || serviceInfo.process.contains("frida-server")) {
+                  return true; // Frida server detected
+              }
+          }
+      }
+  
+      return false; // No Frida detected
+  }
+  
 }
