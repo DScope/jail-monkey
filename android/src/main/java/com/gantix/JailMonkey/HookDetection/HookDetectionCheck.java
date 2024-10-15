@@ -98,7 +98,7 @@ public class HookDetectionCheck {
   
       if (runningServices != null) {
           for (ActivityManager.RunningServiceInfo serviceInfo : runningServices) {
-              if (serviceInfo.process.contains("fridaserver") || serviceInfo.process.contains("frida-server")) {
+              if (serviceInfo.process.contains("frida") || serviceInfo.process.contains("frida-server")) {
                   return true; // Frida server detected
               }
           }
