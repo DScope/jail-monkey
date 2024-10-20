@@ -302,7 +302,7 @@ RCT_EXPORT_METHOD(isDebuggedMode:(RCTPromiseResolveBlock) resolve
 
 - (BOOL)canMockLocation{
     #if TARGET_OS_SIMULATOR
-      return YES;
+      return NO;
     #endif
 
     return [self isJailBroken];
